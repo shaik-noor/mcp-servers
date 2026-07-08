@@ -19,13 +19,37 @@ This is a Model Context Protocol (MCP) server that connects Claude Desktop and C
 
 ## Prerequisites & Installation
 
-### 1. Project Setup
+### Prerequisites
+
+To run and build this MCP server, the following runtimes are required/recommended:
+1. **Node.js (v18+)**: **Required** for the main MCP server execution.
+2. **Python 3**: **Optional** (highly recommended) for extracting and parsing local offline `.one` and `.onepkg` notebook files. If Python is not on your `PATH`, local offline file scanning will be skipped, but the online cloud functionalities via Microsoft Graph will function perfectly.
+
+### Installation
+
+We provide automated setup scripts that verify your environment, notify you if Node.js/npm or Python is missing with instructions on how to install them, copy the environment configuration template, and install npm dependencies.
+
+To run the automated setup:
+- **Windows**: Double-click `scripts\setup.bat` or run:
+  ```cmd
+  scripts\setup.bat
+  ```
+- **macOS / Linux**: Run:
+  ```bash
+  chmod +x scripts/setup.sh && ./scripts/setup.sh
+  ```
+
+*(If Node.js is already installed, you can also run `npm run setup` directly).*
+
+Alternatively, you can perform these steps manually:
+
+#### 1. Install dependencies
 Ensure dependencies are installed:
 ```bash
 npm install
 ```
 
-### 2. Configure environment variables
+#### 2. Configure environment variables
 Copy `.env.example` to `.env` in the root of the project:
 ```bash
 cp .env.example .env
